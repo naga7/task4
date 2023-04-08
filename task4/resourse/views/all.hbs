@@ -1,0 +1,49 @@
+{{>header}}
+
+<section class="container my-5">
+    <h3>All Tasks</h3>
+    <div class="d-flex justify-content-between mb-4">
+            <a href="/add" class="btn btn-primary">
+                Add Task
+            </a>
+            <a href="/deleAL" class="btn btn-danger">
+                Delete All
+            </a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>content</th>
+            <th>status</th>
+             <th>due date</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#if hasData}}
+            {{#each all_tasks}}
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{title}}</td>
+                <td>{{content}}</td>
+                <td>{{status}}</td>
+                <td>{{due_date}}</td>
+                <td>
+                   <a href="/single/{{_id}}" class="btn btn-primary mx-3">activate</a>
+                    <a href="/singletask/{{_id}}" class="btn btn-primary mx-3">Show</a>
+                    <a href="/edit/{{_id}}" class="btn btn-warning mx-3">Edit</a>
+                    <a href="/dele/{{_id}}" class="btn btn-danger mx-3">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+            {{else}}
+            <tr>
+                <td colspan="5">No Tasks yet</td>
+            </tr>
+            {{/if}}
+        </tbody>
+    </table>
+</section>
+{{>footer}}
