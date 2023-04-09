@@ -1,0 +1,26 @@
+{{>header}}
+
+<section class="container my-5">
+    <h2>Edit Task</h2>
+    <form action="/editlogic/{{Task.id}}">
+        <div class="mb-3">
+        </div>
+        <div class="mb-3">
+            <input name="title" class="form-control" placeholder="" value="{{Task.title}} ">
+        </div>
+        <div class="mb-3">
+            <input name="content" class="form-control" placeholder="content" value="{{Task.content}} ">
+        </div>
+        <div class="mb-3">
+            <input name="status" class="form-control" placeholder="status" value="{{Task.status}} ">
+        </div>
+        <div class="mb-3">
+        <input name="due_date" class="form-control" placeholder="due_date"  value="{{Task.due_date}} ">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Add</button>
+        </div>
+    </form>
+</section>
+
+{{>footer}}
